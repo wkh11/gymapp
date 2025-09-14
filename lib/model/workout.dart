@@ -4,12 +4,18 @@ const uuid = Uuid();
 
 enum BodyGroupCategory { arms, chest, legs, back, shoulders }
 
-class Workoutitem {
-  Workoutitem(this.date, this.exerciseName, this.numberOfReps, this.category)
-    : id = Uuid().v4();
+class Workout {
+  Workout({
+    required this.date,
+    required this.exerciseName,
+    required this.weight,
+    required this.numberOfReps,
+    required this.category,
+  }) : id = Uuid().v4();
 
   final DateTime date;
   final String exerciseName;
+  final int weight;
   final int numberOfReps;
   final BodyGroupCategory category;
   final String id;
